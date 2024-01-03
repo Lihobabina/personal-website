@@ -1,3 +1,14 @@
+window.addEventListener('load', function(event) {
+  setTimeout(function() {
+      var preloader = document.getElementById('preloader');
+      preloader.style.transition = 'opacity 1.3s';
+      preloader.style.opacity = 0;
+      setTimeout(function() {
+          preloader.style.opacity = '0';
+      }, 1300);
+  }, 1300);
+});
+
 
 
 document.addEventListener('mousemove', function (e) {
