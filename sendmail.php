@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userMail = $_POST["userMail"];
     $userMessage = $_POST["userMessage"];
 
-    $to = "starshova1309@gmail.com";
+    $to = "olha.lihobabina@gmail.com";
 
     $subject = "Нова заявка з сайту";
 
