@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" 
     rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <title>Document</title>
 </head>
 <body>
 
+    <div class="cursor"></div>
     <div id="preloader">
         <div class="preloader">
             <span></span>
@@ -20,7 +22,6 @@
         </div>
     </div>
 
-    <div class="cursor"></div>
 
     <div class="lines">
         <span></span><span></span><span></span><span></span><span></span>
@@ -98,7 +99,7 @@
         <h6 class="subtitle mb15">My portfolio</h6>
         <h3>Look at my work & <br> give me <span class="main-color">your feedback</span></h3>
         <div class="portfolio-cards mt-30">
-            <a href="#contact" class="card animated-element1">
+            <a href="https://www.kolos-rp.com/" class="card animated-element1" target="_blank">
                     <div class="img mb15">
                         <img src="./images/slide5.png" alt="">
                        </div>
@@ -108,7 +109,7 @@
                             <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width:2;"><line x1="0" y1="16" x2="33" y2="16"></line><line x1="17.3" y1="0.7" x2="33.2" y2="16.5"></line><line x1="17.3" y1="31.6" x2="33.5" y2="15.4"></line></svg>
                         </div>
                     </a>
-             <a href="#contact" class="card animated-element1">
+             <a href="https://neovsn.com/pages/custom_signs.html" target="_blank" class="card animated-element1">
                 <div class="img mb15">
                  <img src="./images/slide7.png" alt="">
                 </div>
@@ -118,7 +119,7 @@
                      <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34.2 32.3" xml:space="preserve" style="stroke-width:2;"><line x1="0" y1="16" x2="33" y2="16"></line><line x1="17.3" y1="0.7" x2="33.2" y2="16.5"></line><line x1="17.3" y1="31.6" x2="33.5" y2="15.4"></line></svg>
                  </div>
                 </a>
-            <a href="#contact" class="card animated-element1">
+            <a href="https://ash-it.netlify.app/" target="_blank" class="card animated-element1">
                <div class="img mb15">
                 <img src="./images/slide4.png" alt="">
                </div>
@@ -129,7 +130,7 @@
                 </div>
             </a>
            
-             <a href="#contact" class="card animated-element1">
+             <a href="http://www.themainattractionbarbershop.com/" target="_blank" class="card animated-element1">
                 <div class="img mb15">
                  <img src="./images/slide.png" alt="">
                 </div>
@@ -242,12 +243,12 @@
             <a href=" https://freelancehunt.com/freelancer/Lihobabina.html" target="_blank" class="hover-this"><span class="hover-anim">Freelancehunt</span></a>
         </div>
         </div>
-        <form action="" class="animated-element4">
+        <form action="#" class="animated-element4" id="form">
             <div class="row">
-                <input type="text" name="" id="" placeholder="Name">
-                <input type="text" name="" id="" placeholder="Email">
+                <input type="text" name="userName" id="" placeholder="Name">
+                <input type="text" name="userMail" id="" placeholder="Email">
             </div>
-            <textarea name="" id="" placeholder="Message"></textarea>
+            <textarea name="" id="userMessage" placeholder="Message"></textarea>
             <button type="submit"><span>Send a message</span></button>
         </form>
        </div>
@@ -255,10 +256,12 @@
 
    </div>
 
-   <script src="https://unpkg.com/scrollreveal"></script>
+
+   <script src="preloader.js"></script>
+   <script src="app.js"></script>
+   <script src="scroll.js"></script>
    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
    <script src="https://kit.fontawesome.com/ef20304e16.js" crossorigin="anonymous"></script>
-   <script src="app.js"></script>
 
 </body>
 </html>

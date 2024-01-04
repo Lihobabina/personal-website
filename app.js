@@ -1,40 +1,27 @@
-window.addEventListener('load', function(event) {
-  setTimeout(function() {
-      var preloader = document.getElementById('preloader');
-      preloader.style.transition = 'opacity 1.3s';
-      preloader.style.opacity = 0;
-      setTimeout(function() {
-          preloader.style.opacity = '0';
-      }, 1300);
-  }, 1300);
-});
+document.addEventListener('DOMContentLoaded', function () {
+  const cursor = document.querySelector('.cursor');
 
-
-
-document.addEventListener('mousemove', function (e) {
+  document.addEventListener('mousemove', function (e) {
     const x = e.clientX;
     const y = e.clientY;
-    const cursor = document.querySelector('.cursor');
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';
   });
-  
+
   const links = document.querySelectorAll('a, .cursor-pointer');
-  
+
   links.forEach(function (link) {
     link.addEventListener('mouseover', function () {
-      const cursor = document.querySelector('.cursor');
       cursor.classList.add('cursor-active');
     });
-  
+
     link.addEventListener('mouseout', function () {
-      const cursor = document.querySelector('.cursor');
       cursor.classList.remove('cursor-active');
     });
   });
+
   const linksHover = document.querySelectorAll('.hover-this');
-  const cursor = document.querySelector('.cursor');
-  
+
   const animateit = function (e) {
     const hoverAnim = this.querySelector('.hover-anim');
     const x = e.offsetX;
@@ -47,12 +34,16 @@ document.addEventListener('mousemove', function (e) {
     hoverAnim.style.transform = `translate(${xMove}px, ${yMove}px)`;
     if (e.type === 'mouseleave') hoverAnim.style.transform = '';
   };
-  
+
   linksHover.forEach(function (link) {
     link.addEventListener('mousemove', animateit);
     link.addEventListener('mouseleave', animateit);
   });
-    
+  
+});
+
+
+
 
   document.addEventListener('DOMContentLoaded', function () {
     'use strict';
@@ -102,31 +93,29 @@ document.addEventListener('mousemove', function (e) {
 
 
 
-  ScrollReveal().reveal('.animated-element1', { 
-    delay: 150, // задержка перед анимацией
-    distance: '70px', // расстояние, на которое элемент перемещается в процессе анимации
-    duration: 700, // длительность анимации (в миллисекундах)
-    easing: 'ease-in-out', // функция плавности анимации
-    origin: 'bottom' // направление, из которого появляется элемент
-  });
-  ScrollReveal().reveal('.animated-element2', { 
-    delay: 150, // задержка перед анимацией
-    distance: '70px', // расстояние, на которое элемент перемещается в процессе анимации
-    duration: 700, // длительность анимации (в миллисекундах)
-    easing: 'ease-in-out', // функция плавности анимации
-    origin: 'top' // направление, из которого появляется элемент
-  });
-  ScrollReveal().reveal('.animated-element3', { 
-    delay: 150, // задержка перед анимацией
-    distance: '70px', // расстояние, на которое элемент перемещается в процессе анимации
-    duration: 700, // длительность анимации (в миллисекундах)
-    easing: 'ease-in-out', // функция плавности анимации
-    origin: 'left' // направление, из которого появляется элемент
-  });
-  ScrollReveal().reveal('.animated-element4', { 
-    delay: 150, // задержка перед анимацией
-    distance: '70px', // расстояние, на которое элемент перемещается в процессе анимации
-    duration: 700, // длительность анимации (в миллисекундах)
-    easing: 'ease-in-out', // функция плавности анимации
-    origin: 'right' // направление, из которого появляется элемент
-  });
+
+  const form = document.getElementById('form');
+form.addEventListener('submit', formSend);
+
+async function formSend(e) {
+    e.preventDefault();
+
+    let formData = new FormData(form);
+
+    try {
+        let response = await fetch('sendmail.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            alert('Success');
+            form.reset();
+        } else {
+            throw new Error('Server error');
+        }
+    } catch (error) {
+        console.error('Error:', error.message);
+        alert('Error');
+    }
+}
